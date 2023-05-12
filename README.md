@@ -1,0 +1,163 @@
+#include <iostream>
+#include <graphics.h>
+
+void triangle()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    line(200,100,100,300);
+    line(200,100,300,300);
+    line(100,300,300,300);
+    floodfill(200,200,WHITE);
+    line(50,100,75,100);
+    line(62.5,100,62.5,300);
+    line(50,300,75,300);
+    outtextxy(60,200,"h");
+    line(100,325,100,350);
+    line(100,337.5,300,337.5);
+    line(300,325,300,350);
+    outtextxy(200,328,"b");
+    getch();
+}
+
+void rectangle()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    rectangle(100,100,300,300);
+    floodfill(200,200,WHITE);
+    line(50,100,75,100);
+    line(62.5,100,62.5,300);
+    line(50,300,75,300);
+    outtextxy(60,200,"h");
+    line(100,325,100,350);
+    line(100,337.5,300,337.5);
+    line(300,325,300,350);
+    outtextxy(200,328,"b");
+    getch();
+}
+
+void circle()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    circle(200,200,100);
+    floodfill(200,200,WHITE);
+    line(100,325,100,350);
+    line(100,337.5,300,337.5);
+    line(300,325,300,350);
+    outtextxy(200,328,"d");
+    getch();
+}
+
+void semicircle()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    arc(200,200,0,180,100);
+    line(100,200,300,200);
+    floodfill(150,150,WHITE);
+    line(100,225,100,250);
+    line(100,237.5,300,237.5);
+    line(300,225,300,250);
+    outtextxy(200,228,"d");
+
+    getch();
+}
+
+void quartercircle()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    arc(200,200,0,90,100);
+    line(200,200,300,200);
+    line(200,200,200,100);
+    floodfill(250,150,WHITE);
+    line(200,225,200,250);
+    line(200,237.5,300,237.5);
+    line(300,225,300,250);
+    outtextxy(250,228,"b");
+    line(175,100,150,100);
+    line(162.5,100,162.5,200);
+    line(175,200,150,200);
+    outtextxy(160,150,"h");
+    getch();
+}
+
+void tube()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    circle(200,200,100);
+    circle(200,200,70);
+    floodfill(120,180,WHITE);
+    line(137,200,263,200);
+    line(137,190,137,210);
+    line(263,190,263,210);
+    outtextxy(197,190,"d");
+    line(100,325,100,350);
+    line(100,337.5,300,337.5);
+    line(300,325,300,350);
+    outtextxy(200,328,"D");
+
+    getch();
+}
+
+void box()
+{
+    initwindow(400,400);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL,WHITE);
+    rectangle(100,100,300,300);
+    rectangle(150,150,250,250);
+    floodfill(200,120,WHITE);
+    line(50,100,75,100);
+    line(62.5,100,62.5,300);
+    line(50,300,75,300);
+    outtextxy(60,200,"h");
+    line(100,325,100,350);
+    line(100,337.5,300,337.5);
+    line(300,325,300,350);
+    outtextxy(200,328,"b");
+    line(200,200,250,200);
+    outtextxy(242,192,">");
+    line(300,200,350,200);
+    outtextxy(302,192,"<");
+    outtextxy(325,180,"d");
+
+    getch();
+}
+
+
+
+int main()
+{
+    int i;
+	printf("Please select to show a picture \n");
+	printf(" 1.triangle\n 2.rectangle\n 3.circle\n 4.semi-circle\n 5.quater-circle\n 6.tube\n 7.box\n");
+	while(!(i>=1&&i<=7))
+	{
+	printf("\nEnter your choice =");
+	scanf("%d",&i);
+	printf("\n");
+	switch (i)
+	{
+	case 1 : triangle();break;
+	case 2 : rectangle();break;
+	case 3 : circle();break;
+	case 4 : semicircle();break;
+	case 5 : quartercircle();break;
+	case 6 : tube();break;
+	case 7 : box();break;
+	default : printf("You can't use the program.Please enter number 1-7\n");
+
+    return 0;
+}
+	}
+}
